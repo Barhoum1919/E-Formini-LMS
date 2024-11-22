@@ -1,0 +1,47 @@
+<nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0" [ngClass]="{'sticky-top': isSticky}">
+    <a routerLink="/"  class="nav-item nav-link  " [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+        <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>E-Formini </h2>
+    </a>
+    <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav ms-auto p-4 p-lg-0">
+           
+            <a  routerLink="/"  class="nav-item nav-link  " [routerLinkActiveOptions]="{exact: true}" routerLinkActive="active">Home</a>
+            <a   *ngIf="button==='Logout'"   routerLink="dashboard" class="nav-item nav-link " routerLinkActive="active">Dashboard</a>
+            <a   *ngIf="button==='Logout'"   routerLink="chat-bot" class="nav-item nav-link " routerLinkActive="active">ChatBot</a>
+            <a  routerLink="about" class="nav-item nav-link " routerLinkActive="active">About</a>
+            <a routerLink="courses" class="nav-item nav-link  " routerLinkActive="active">Courses</a>
+            <a routerLink="contact" class="nav-item nav-link " routerLinkActive="active">Contact</a>
+        </div>
+
+        <!-- Show "Join Now" --> 
+    <a *ngIf="button === 'Join Now' || isLoggedIn===false || isLoggedOut===true" routerLink="register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0;">
+        {{ button }} <i class="fa fa-arrow-left ms-3"></i>
+      </a>
+
+     <!-- "Logout" button based on button variable -->
+      <div *ngIf="button === 'Logout'" class="dropdown">
+        <a class="btn btn-primary py-4 px-lg-5 d-none d-lg-block dropdown-toggle" 
+            role="button" data-bs-toggle="dropdown" 
+           aria-expanded="false" style="border-radius: 0;">
+          {{name}}
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" routerLink="profile">MyProfile<i class="fa fa-user "></i></a></li>
+          <li><a class="dropdown-item" routerLink="login" (click)="logout()">Log out<i class="fa fa-arrow-right ms-2 "></i></a></li>
+        </ul>
+      </div>
+    
+          <!-- Show "Join Now" button if not logged in 
+          <a  (click)="logout()" routerLink="register" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0 0 0;">
+            {{button}} <i class="fa fa-arrow-right ms-3"></i>
+        </a> -->
+        
+        <!-- Show "Log Out" button if logged in 
+        <a *ngIf="isLoggedIn==true" (click)="logOut()"  routerLink="login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block" style="border-radius: 0 0 0;">
+            Log Out <i class="fa fa-arrow-right ms-3"></i>
+        </a> -->
+    </div>
+</nav>

@@ -1,0 +1,106 @@
+/*** Categories & Courses ***/
+.category img,
+.course-item img {
+    transition: .5s;
+}
+
+.category a:hover img,
+.course-item:hover img {
+    transform: scale(1.1);
+}
+/* Animation for fields */
+.field-animation {
+    opacity: 0;
+    transform: translateY(80px);
+    transition: opacity 4s ease, transform 4s ease;
+}
+
+.field-animation.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+/*** Section Title ***/
+.section-title {
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: calc(100% + 80px);
+    height: 2px;
+    top: 4px;
+    left: -40px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title::after {
+    position: absolute;
+    content: "";
+    width: calc(100% + 120px);
+    height: 2px;
+    bottom: 5px;
+    left: -60px;
+    background: var(--primary);
+    z-index: -1;
+}
+
+.section-title.text-start::before {
+    width: calc(100% + 40px);
+    left: 0;
+}
+
+.section-title.text-start::after {
+    width: calc(100% + 60px);
+    left: 0;
+}
+.course-scroll-container {
+    overflow-x: auto;   /* Enables horizontal scrolling */
+    white-space: nowrap; /* Prevents wrapping of the child elements */
+    padding: 10px 0;     /* Optional: adds some padding to the container */
+  }
+  
+  .course-items {
+    display: flex;       /* Arrange course items in a row */
+  }
+  
+  .course-item {
+    flex: 0 0 auto;      /* Prevent course items from stretching and make them fixed width */
+    width: 300px;        /* Set width for each course item (adjust as needed) */
+    margin-right: 15px;  /* Adds spacing between the items */
+  }
+  
+  .course-item img {
+    width: 100%;         /* Make the image fit the container */
+    height: auto;
+  }
+  .scroll-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .scroll-btn.left {
+    left: 10px;
+  }
+  
+  .scroll-btn.right {
+    right: 10px;
+  }
+  .carousel-control-prev {
+    margin-right: 100px; /* Adjust the space on the left */
+  }
+  
+  .carousel-control-next {
+    margin-left: 120px; /* Adjust the space on the right */
+  }
+  

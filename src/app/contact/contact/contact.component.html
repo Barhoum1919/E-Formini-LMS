@@ -1,0 +1,89 @@
+
+<!-- Spinner Start -->
+<div *ngIf="isLoading" id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div class="container-xxl py-5 " >
+    <div class="container">
+        <div class="text-center wow fadeInUp field-animation" [ngClass]="{'show': showFields[0]}" >
+            <h6 class="section-title bg-white text-center text-primary px-3">Contact Us</h6>
+            <h1 class="mb-5">Contact For Any Query</h1>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-4 col-md-6 wow fadeInUp" >
+                <h5 class="field-animation" [ngClass]="{'show': showFields[1]}">Get In Touch</h5>
+                <p class="mb-4 field-animation" [ngClass]="{'show': showFields[2]}">If you have any questions or problems , You can fill the contact form and we will reply to you as soon as possible.</p>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary field-animation" [ngClass]="{'show': showFields[3]}" style="width: 50px; height: 50px;">
+                        <i class="fa fa-map-marker-alt text-white field-animation" [ngClass]="{'show': showFields[3]}"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary field-animation" [ngClass]="{'show': showFields[4]}">Office</h5>
+                        <p class="mb-0 field-animation" [ngClass]="{'show': showFields[5]}">Technopole Ghazala Centre 4C SUPCOM</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center mb-3">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary field-animation" [ngClass]="{'show': showFields[6]}" style="width: 50px; height: 50px;">
+                        <i class="fa fa-phone-alt text-white field-animation" [ngClass]="{'show': showFields[6]}"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary field-animation" [ngClass]="{'show': showFields[7]}">Mobile</h5>
+                        <p class="mb-0 field-animation" [ngClass]="{'show': showFields[8]}">29 066 950</p>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center">
+                    <div class="d-flex align-items-center justify-content-center flex-shrink-0 bg-primary field-animation" [ngClass]="{'show': showFields[9]}" style="width: 50px; height: 50px;">
+                        <i class="fa fa-envelope-open text-white field-animation" [ngClass]="{'show': showFields[9]}"></i>
+                    </div>
+                    <div class="ms-3">
+                        <h5 class="text-primary field-animation" [ngClass]="{'show': showFields[10]}">Email</h5>
+                        <p class="mb-0 field-animation" [ngClass]="{'show': showFields[11]}">ibrahim.darghouthi&#64;supcom.tn</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 wow fadeInUp field-animation" [ngClass]="{'show': showFields[10]}" >
+                <iframe class="position-relative rounded w-100 h-100"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3190.9365322124095!2d10.185198974957506!3d36.89186656252835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12e2cb6fc49b7883%3A0x84da64ea383c01d2!2s%C3%89cole%20Sup%C3%A9rieure%20des%20communications%20de%20Tunis!5e0!3m2!1sfr!2stn!4v1712850130272!5m2!1sfr!2stn"
+                    frameborder="0" style="min-height: 300px; border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+            <div class="col-lg-4 col-md-12 wow fadeInUp"  >
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <div class="form-floating field-animation" [ngClass]="{'show': showFields[11]}">
+                                <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                <label for="name">Your Name</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-floating field-animation" [ngClass]="{'show': showFields[12]}">
+                                <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                <label for="email">Your Email</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating field-animation" [ngClass]="{'show': showFields[13]}">
+                                <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                <label for="subject">Subject</label>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="form-floating field-animation" [ngClass]="{'show': showFields[14]}">
+                                <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                <label for="message">Message</label>
+                            </div>
+                        </div>
+                        <div class="col-12 field-animation" [ngClass]="{'show': showFields[15]}">
+                            <button class="btn btn-primary w-100 py-3" type="submit">Send Message</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Contact End -->

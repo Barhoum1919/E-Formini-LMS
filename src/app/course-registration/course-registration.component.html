@@ -1,0 +1,60 @@
+
+<!-- Spinner Start -->
+<div *ngIf="isLoading" id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+
+<div class="col-lg-4 col-md-12 wow fadeInUp" style="margin: 0 auto; margin-top: 5%;">
+    <form   [formGroup]="registrationForm">
+        <div class="row g-3">
+            <div class="col-md-12">
+                <h2 style="text-align: center;">Subscribe To Course</h2>
+                
+                <!-- Email or Username Input -->
+                <div class="form-floating field-animation">
+                    <input type="email" formControlName="email" class="form-control" id="username" placeholder="Email or Username" required>
+                    <label for="username">Email or Username</label>
+                </div>
+            </div>
+
+            <div class="col-md-12">
+                <!-- Displaying the clicked course automatically -->
+                <img class="img-fluid wow" [src]="selectedCourse.urlImage" alt="">
+                <div class="form-floating field-animation">
+                    <input type="text" class="form-control" id="courseName" [value]="selectedCourse.subjectName " disabled>
+                    <label for="courseName">Course by {{selectedCourse.instructorName}}</label>
+                </div>
+               
+               
+               
+                
+            </div>
+            <div class="col-md-12">
+                <div class="form-floating field-animation">
+                    <input type="text" class="form-control" id="Description" [value]="selectedCourse.subjectDescription" disabled>
+                    <label for="Description">Description : </label>
+                </div>
+             
+            </div>
+            <div class="col-md-12">
+                <div class="form-floating field-animation">
+                    <input type="text" class="form-control" id="price" value="This course is Free " disabled>
+                </div>
+            </div>
+            <div class="mb-3" style="text-align: center;">
+                <small class="fa fa-star text-primary"></small>
+                <small class="fa fa-star text-primary"></small>
+                <small class="fa fa-star text-primary"></small>
+                <small class="fa fa-star text-primary"></small>
+                <small class="fa fa-star text-secondary"></small>
+                <small>(123)</small>
+            </div>
+            <div class="col-12">
+                <!-- Submit Button -->
+                <button class="btn btn-primary w-100 py-3" (click)="onSubmit()"  type="submit">Subscribe</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,31 @@
+<!-- Spinner Start -->
+<div *ngIf="isLoading" id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+    <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+        <span class="sr-only">Loading...</span>
+    </div>
+</div>
+<div class="col-lg-4 col-md-12 wow fadeInUp" style="margin: 0 auto; margin-top: 5%;">
+    
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" >
+        <div class="row g-3">
+            <div class="col-md-12">
+                <h2 style="text-align: center;">Login to Your account!</h2>
+                <div class="form-floating field-animation" [ngClass]="{'show': showFields[0]}">
+                    <input type="email" formControlName="UserName" class="form-control" id="username" placeholder="Email or Username">
+                    <label for="username">Email</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-floating field-animation" [ngClass]="{'show': showFields[1]}">
+                    <input type="password" formControlName="Password"  class="form-control" id="Password" placeholder="Password">
+                    
+                    <label for="Password">Password</label>
+                </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-primary w-100 py-3" [disabled]="loginForm.invalid || isLoading" type="submit">Login</button>
+            </div>
+        </div>
+    </form>
+    <p style="margin-top: 2%;">Don't Have an Account? <a routerLink="/register">Register</a></p>
+</div>
